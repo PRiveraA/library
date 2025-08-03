@@ -14,15 +14,18 @@ body {
 
 .container {
   display: flex;
+  flex-direction: column;
   height: 100%;
+  display: flex;
 }
 
-.left {
-  min-width: 25rem;
-  background-color: white;
+.container>.title {
+  font-size: 10rem;
+  margin: 0;
+  padding: 0;
 }
 
-.right {
+.library {
   width: 100%;
 }
 
