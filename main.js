@@ -19,6 +19,9 @@ addBook("The Lies of Lock Lamora", "Scott Lynch", 499, "no")
 addBook("The Martian", "Andy Weir", 369, "no")
 addBook("The Black Company", "Glen Cook", 319, "no")
 
+
+
+
 // Book Creation
 const cardContainer = document.querySelector(".card-container")
 for (const book of myLibrary) {
@@ -27,6 +30,10 @@ for (const book of myLibrary) {
   const card = document.createElement("div")
   card.classList.add("card")
   cardContainer.appendChild(card)
+  // Side margin
+  const side = document.createElement("div")
+  side.classList.add("side")
+  card.appendChild(side)
   // Details
   const details = document.createElement("div")
   details.classList.add("details")

@@ -28,7 +28,7 @@ body {
 
 .card-container {
   padding-top: 2rem;
-  padding-left: 3rem;
+  padding-left: 2rem;
   padding-right: 0.2rem;
   display: grid;
   justify-content: start;
@@ -39,19 +39,26 @@ body {
 }
 
 .card {
+  display: flex;
   width: 100%;
   max-width: 12rem;
   min-width: 12rem;
-  /* ~240px, or a bit over 2 inches on a 96dpi screen */
   height: auto;
   max-height: 15rem;
-  background-color: #ffffff;
+  background-color: rgba(98, 68, 68, 0.119);
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e0e0e0;
-  padding: 0.5rem;
   box-sizing: border-box;
-  /* Ensures padding doesn't affect width/height calculation */
+}
+
+.card .side {
+  min-height: 100%;
+  max-width: 2rem;
+  min-width: 2rem;
+  color: #333333;
+  background-color: rgb(148, 79, 79);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 
 .card>.details {
@@ -60,6 +67,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   gap: 0.2rem;
+  padding: 0.5rem;
 }
 
 .title {
@@ -72,14 +80,14 @@ body {
 
 .author {
   font-size: 1rem;
-  color: #666666;
+  color: #323232;
   margin: 0;
 }
 
 .pages,
 .read {
   font-size: 0.9rem;
-  color: #888888;
+  color: #3a3a3a;
   margin: 0;
 }
 
