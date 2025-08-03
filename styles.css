@@ -60,6 +60,7 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
+  min-height: 12rem;
 }
 
 .card .side {
@@ -75,7 +76,7 @@ body {
 .card>.details {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: flex-start;
   gap: 0.2rem;
   padding: 0.5rem;
@@ -125,8 +126,7 @@ form {
   width: 15rem;
   position: relative;
   z-index: 1;
-  margin-top: -3rem;
-  display: none;
+  margin-top: -11.2rem;
 }
 
 form>div {
@@ -136,6 +136,9 @@ form>div {
   margin-top: 10px;
 }
 
+.form-hidden {
+  display: none;
+}
 
 .sample-card-structure {
   display: none;

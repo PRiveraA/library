@@ -70,15 +70,10 @@ for (const book of myLibrary) {
 }
 
 
-
+// Make form visible
 const addBookButton = document.querySelector(".add-book")
 
 addBookButton.addEventListener("click", (e) => {
   const form = document.querySelector("form")
-  let formComputedStyle = window.getComputedStyle(form)
-  let formDisplay = formComputedStyle.display
-
-  if (formDisplay === "none") {
-    form.setAttribute("style", "display: flex;")
-  }
+  form.classList.toggle("form-hidden")
 })
