@@ -17,9 +17,17 @@ body {
   flex-direction: column;
   height: 100%;
   display: flex;
+  align-items: center;
 }
 
-.container>.title {
+.titles-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.titles-section>.title {
   font-size: 10rem;
   margin: 0;
   padding: 0;
@@ -98,6 +106,19 @@ body {
   font-weight: bold;
   display: inline;
 }
+
+button {
+  font-family: inherit;
+  border-radius: 0;
+  border: 1px solid black;
+  font-size: 1.1rem;
+  width: 100%;
+  border-left: 0;
+  border-right: 0;
+}
+
+
+
 
 .sample-card-structure {
   display: none;
