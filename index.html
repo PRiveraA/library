@@ -12,9 +12,10 @@
   <div class="container">
     <section class="titles-section">
       <h1 class="title">Library</h1>
-      <button class="add-book">Click to add to library</button>
+      <button class="bring-up-form">Click to add to library</button>
     </section>
     <section class="form-container">
+      <!-- Form -->
       <form class="form-hidden">
         <div>
           <label for="title">Title:</label>
@@ -32,22 +33,29 @@
           <label for="read">Read?</label>
           <input type="text" name="read" id="read">
         </div>
-        <div><button type="submit">Add</button><button>Cancel</button></div>
+        <div><button class="submit-button" type="submit">Add</button><button class="cancel-button"
+            type="button">Cancel</button></div>
 
       </form>
     </section>
     <section class="library">
       <div class="card-container">
         <!-- Cards will generate here -->
-        <div class="sample-card-structure">
+        <div class="card">
           <div class="side"></div>
           <div class="details">
-            <h2 class="title">The Lies of Lock Lamora</h2>
-            <p class="author">Scott Lynch</p>
-            <p class="pages">Pages: 123</p>
-            <div class="read">
-              <p class="text">Read: </p>
-              <p class="stat">Yes</p>
+            <div class="top-half">
+              <h2 class="title">The Lies of Lock Lamora</h2>
+              <p class="author">Scott Lynch</p>
+              <div class="read">
+                <p class="text">Read: </p>
+                <p class="pages">Pages: 123</p>
+                <p class="stat">Yes</p>
+              </div>
+            </div>
+
+            <div class="bottom-half">
+
             </div>
           </div>
         </div>

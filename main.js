@@ -23,9 +23,8 @@ addBook("The Black Company", "Glen Cook", 319, "no")
 
 
 // Book Creation
-const cardContainer = document.querySelector(".card-container")
-for (const book of myLibrary) {
-  console.log(book)
+
+const generateBook = function (book) {
   // Card
   const card = document.createElement("div")
   card.classList.add("card")
@@ -70,10 +69,43 @@ for (const book of myLibrary) {
 }
 
 
-// Make form visible
-const addBookButton = document.querySelector(".add-book")
+const cardContainer = document.querySelector(".card-container")
+for (const book of myLibrary) {
+  generateBook(book)
+}
 
-addBookButton.addEventListener("click", (e) => {
-  const form = document.querySelector("form")
+
+// Make form visible
+const bringUpForm = document.querySelector(".bring-up-form")
+const form = document.querySelector("form")
+
+bringUpForm.addEventListener("click", (e) => {
+  form.classList.toggle("form-hidden")
+  document.getElementById("title").focus()
+
+})
+
+// Form submit
+form.addEventListener("submit", (e) => {
+  e.preventDefault()
+  let title = document.getElementById("title").value
+  let author = document.getElementById("author").value
+  let pages = document.getElementById("pages").value
+  let read = document.getElementById("read").value
+
+  addBook(title, author, pages, read)
+  const lastBook = myLibrary[myLibrary.length - 1]
+  generateBook(lastBook)
+  form.classList.toggle("form-hidden")
+  form.reset()
+})
+
+// Form cancel button
+const cancelButton = document.querySelector(".cancel-button")
+cancelButton.addEventListener("click", (e) => {
+  e.preventDefault()
+  form.reset()
   form.classList.toggle("form-hidden")
 })
+
+
