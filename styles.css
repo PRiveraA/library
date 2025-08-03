@@ -126,6 +126,7 @@ form {
   position: relative;
   z-index: 1;
   margin-top: -3rem;
+  display: none;
 }
 
 form>div {
