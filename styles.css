@@ -1,18 +1,88 @@
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-color: rgb(65, 65, 65);
+  background-color: rgb(220, 220, 220);
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .container {
-  height: 100%;
   display: flex;
-  justify-content: baseline;
+  height: 100%;
 }
 
 .left {
   width: 20rem;
   background-color: white;
+}
+
+.right {
+  width: 100%;
+}
+
+.card-container {
+  padding: 2rem;
+  padding-left: 3rem;
+  display: grid;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 12rem;
+  min-width: 12rem;
+  /* ~240px, or a bit over 2 inches on a 96dpi screen */
+  height: auto;
+  max-height: 15rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  /* Ensures padding doesn't affect width/height calculation */
+}
+
+.card>.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.2rem;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333333;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.author {
+  font-size: 1rem;
+  color: #666666;
+  margin: 0;
+}
+
+.pages,
+.read {
+  font-size: 0.9rem;
+  color: #888888;
+  margin: 0;
+}
+
+.read>* {
+  font-weight: bold;
+  display: inline;
 }

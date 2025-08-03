@@ -20,5 +20,6 @@ addBook("The Martian", "Andy Weir", 369, "no")
 addBook("The Black Company", "Glen Cook", 319, "no")
 
 for (const book of myLibrary) {
-  console.log(book)
+  console.log(book.author)
+  // Dynamic html goes here
 }
