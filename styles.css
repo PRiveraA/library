@@ -109,6 +109,20 @@ body {
   display: inline;
 }
 
+.unread-status {
+  background-color: rgb(170, 110, 110);
+  border-radius: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.read-status {
+  background-color: rgb(110, 170, 118);
+  border-radius: 2px;
+  padding-left: 3px;
+  padding-right: 4px;
+}
+
 .titles-section>button {
   font-family: inherit;
   border-radius: 0;

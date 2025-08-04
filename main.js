@@ -15,9 +15,9 @@ const addBook = function (title, author, pages, read) {
 
 Object.setPrototypeOf(addBook, Book.prototype)
 
-addBook("The Lies of Lock Lamora", "Scott Lynch", 499, "no")
-addBook("The Martian", "Andy Weir", 369, "no")
-addBook("The Black Company", "Glen Cook", 319, "no")
+addBook("The Lies of Lock Lamora", "Scott Lynch", 499, false)
+addBook("The Martian", "Andy Weir", 369, false)
+addBook("The Black Company", "Glen Cook", 319, false)
 
 
 
@@ -68,7 +68,8 @@ const generateBook = function (book) {
   // Read stat
   const stat = document.createElement("p")
   stat.classList.add("stat")
-  stat.textContent = book.read
+  stat.textContent = book.read ? "Yes" : "No"
+  book.read ? stat.classList.add("read-status") : stat.classList.add("unread-status")
   read.appendChild(stat)
   // Bottom half
   const bottomHalf = document.createElement("div")
@@ -95,16 +96,20 @@ const form = document.querySelector("form")
 bringUpForm.addEventListener("click", (e) => {
   form.classList.toggle("form-hidden")
   document.getElementById("title").focus()
-
 })
 
 // Form submit
 form.addEventListener("submit", (e) => {
   e.preventDefault()
-  let title = document.getElementById("title").value
-  let author = document.getElementById("author").value
-  let pages = document.getElementById("pages").value
-  let read = document.getElementById("read").value
+  const title = document.getElementById("title").value
+  const author = document.getElementById("author").value
+  const pages = document.getElementById("pages").value
+  const checkedValue = document.querySelector('input[name="read"]:checked').value
+  let read
+  if (checkedValue === "yes") {
+    read = true
+  } else { read = false }
+
 
   addBook(title, author, pages, read)
   const lastBook = myLibrary[myLibrary.length - 1]
