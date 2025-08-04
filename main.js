@@ -28,6 +28,7 @@ const generateBook = function (book) {
   // Card
   const card = document.createElement("div")
   card.classList.add("card")
+  card.setAttribute("data-id", book.id)
   cardContainer.appendChild(card)
   // Side margin
   const side = document.createElement("div")
@@ -139,6 +140,24 @@ cardContainer.addEventListener("click", (e) => {
       card.remove()
     }
   }
+
+  // Book change read status button
+  if (e.target.classList.contains("stat")) {
+    const card = e.target.closest(".card")
+    const id = card.getAttribute("data-id")
+    const book = myLibrary.find((book) => book.id === id)
+    book.read = !book.read
+    let stat = card.querySelector(".stat")
+    if (book.read === true) {
+      stat.textContent = "Yes"
+      stat.classList.replace("unread-status", "read-status")
+    } else {
+      stat.textContent = "No"
+      stat.classList.replace("read-status", "unread-status")
+    }
+  }
 })
+
+
 
 

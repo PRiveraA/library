@@ -109,6 +109,10 @@ body {
   display: inline;
 }
 
+.read>.stat {
+  cursor: pointer;
+}
+
 .unread-status {
   background-color: rgb(170, 110, 110);
   border-radius: 2px;
