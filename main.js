@@ -37,25 +37,29 @@ const generateBook = function (book) {
   const details = document.createElement("div")
   details.classList.add("details")
   card.appendChild(details)
+  // Top half
+  const topHalf = document.createElement("div")
+  topHalf.classList.add("top-half")
+  details.appendChild(topHalf)
   // Title
   const title = document.createElement("h2")
   title.classList.add("title")
   title.textContent = book.title
-  details.appendChild(title)
+  topHalf.appendChild(title)
   // Author
   const author = document.createElement("p")
   author.classList.add("author")
   author.textContent = book.author
-  details.appendChild(author)
+  topHalf.appendChild(author)
   // Pages
   const pages = document.createElement("p")
   pages.classList.add("pages")
   pages.textContent = "Pages: " + book.pages
-  details.appendChild(pages)
+  topHalf.appendChild(pages)
   // Read
   const read = document.createElement("div")
   read.classList.add("read")
-  details.appendChild(read)
+  topHalf.appendChild(read)
   // Read text
   const text = document.createElement("p")
   text.classList.add("text")
@@ -66,6 +70,15 @@ const generateBook = function (book) {
   stat.classList.add("stat")
   stat.textContent = book.read
   read.appendChild(stat)
+  // Bottom half
+  const bottomHalf = document.createElement("div")
+  bottomHalf.classList.add("bottom-half")
+  details.appendChild(bottomHalf)
+  // Del button
+  const delButton = document.createElement("span")
+  delButton.classList.add("material-symbols-outlined")
+  delButton.innerHTML = "delete"
+  bottomHalf.appendChild(delButton)
 }
 
 
@@ -106,6 +119,21 @@ cancelButton.addEventListener("click", (e) => {
   e.preventDefault()
   form.reset()
   form.classList.toggle("form-hidden")
+})
+
+// Book deletion button
+cardContainer.addEventListener("click", (e) => {
+  let targetClass = e.target.classList.value
+  if (targetClass === "material-symbols-outlined") {
+    for (let i = 0; i < myLibrary.length; i++) {
+      const card = e.target.closest(".card")
+      const cardTitle = card.querySelector(".title").textContent
+      if (myLibrary[i].title === cardTitle) {
+        myLibrary.splice(i, 1)
+      }
+      card.remove()
+    }
+  }
 })
 
 

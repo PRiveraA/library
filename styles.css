@@ -80,6 +80,7 @@ body {
   align-items: flex-start;
   gap: 0.2rem;
   padding: 0.5rem;
+  width: 100%;
 }
 
 .title {
@@ -138,6 +139,16 @@ form>div {
 
 .form-hidden {
   display: none;
+}
+
+.material-symbols-outlined {
+  font-size: 1rem;
+  color: #787878;
+}
+
+.bottom-half {
+  text-align: end;
+  width: 100%;
 }
 
 .sample-card-structure {
