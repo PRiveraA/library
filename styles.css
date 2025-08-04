@@ -114,7 +114,7 @@ body {
 }
 
 .unread-status {
-  background-color: rgb(170, 110, 110);
+  background-color: rgba(226, 53, 53, 0.686);
   border-radius: 2px;
   padding-left: 3px;
   padding-right: 3px;
